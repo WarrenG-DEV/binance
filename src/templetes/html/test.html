@@ -1,0 +1,91 @@
+{% extends 'common/base.html' %}
+{% block content %}
+    <section class="container">
+        <section class="contentInner">
+            <div class="menuMg">
+                <div class="divCon fl clearfix">
+                    <h4 class="h4">기준설정</h4>
+                    <!-- table -->
+                    <table class="tbl">
+<!--                        <caption>기준관리</caption>-->
+                        <colgroup>
+                            <col style="width:160px;">
+                            <col style="width:auto;">
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <th scope="row">단타 청산 기준</th>
+                                <td>
+                                    <input type="text" id="stStop" name="stStop" title="단타 청산 기준 입력" class="input w100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">단타 손절 기준 <font color="red">*</font></th>
+                                <td>
+                                    <input type="text" id="stStopLoss" name="stStopLoss" title="단타 손절 기준 입력" class="input w100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">스윙 청산 기준<font color="red">*</font></th>
+                                <td>
+                                    <input type="text" id="swStop" name="swStop" title="스윙 청산 기준 입력" class="input w100">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">스윙 손절 기준<font color="red">*</font></th>
+                                <td>
+                                    <input type="text" id="swStopLoss" name="swStopLoss" title="스윙 손절 기준 입력" class="input w100">
+                                    <select class="sel w180" id="sortOrdr" name="sortOrdr" title="정렬순서 선택"></select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">단타 사용 <font color="red">*</font></th>
+                                <td>
+                                    <div class="formChkRdo" id="shortTdUseAt">
+                                        <ul>
+                                            <li><label class="label"><input type="radio" class="rdo" id="shortTdUseAt1" title="사용" name="shortTdUseAt" value="Y"><span class="ico"></span><span class="lTxt">사용</span></label></li>
+                                            <li><label class="label"><input type="radio" class="rdo" id="shortTdUseAt2" title="미사용" name="shortTdUseAt" value="N"><span class="ico"></span><span class="lTxt">미사용</span></label></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">스윙 사용 <font color="red">*</font></th>
+                                <td>
+                                    <div class="formChkRdo" id="swingTdUseAt">
+                                        <ul>
+                                            <li><label class="label"><input type="radio" class="rdo" id="swingTdUseAt1" title="사용" name="swingTdUseAt" value="Y"><span class="ico"></span><span class="lTxt">사용</span></label></li>
+                                            <li><label class="label"><input type="radio" class="rdo" id="swingTdUseAt2" title="미사용" name="swingTdUseAt" value="N"><span class="ico"></span><span class="lTxt">미사용</span></label></li>
+                                        </ul>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- //table -->
+                    <!-- btn -->
+                    <div class="btnWrap br">
+                        <a href="#" class="btnLine btn_l red fl" onclick="fnReset();">Reset</a>
+                        <a href="#" class="btn btn_l gb_btn wBtn" onclick="fnDetailUpt()">저장</a>
+                        <a href="#" class="btn btn_l gb_btn wBtn" onclick="fnSubMenuAdd();" data-id="sLayerId" id="subMnAddBtn">3</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+<script type="text/javascript">
+
+    function fnReset(){
+        $("#stStop").val('');
+        $("#stStopLoss").val('');
+        $("#swStop").val('');
+        $("#swStopLoss").val('');
+
+    }
+
+</script>
+
+
+{% endblock %}
+
